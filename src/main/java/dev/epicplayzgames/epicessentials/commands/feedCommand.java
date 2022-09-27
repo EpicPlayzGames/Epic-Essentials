@@ -20,6 +20,7 @@ public class feedCommand implements CommandExecutor {
 
                 player.setFoodLevel(20);
                 player.setSaturation(20);
+                player.sendMessage(ChatColor.GOLD + "You've Been Fed.");
 
             } else {
 

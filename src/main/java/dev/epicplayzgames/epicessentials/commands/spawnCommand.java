@@ -1,5 +1,6 @@
 package dev.epicplayzgames.epicessentials.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,6 +17,7 @@ public class spawnCommand implements CommandExecutor {
 
             // Teleports player to world spawn
             player.teleport(player.getWorld().getSpawnLocation());
+            player.sendMessage(ChatColor.GOLD + "Teleported to World Spawn");
 
         }
 

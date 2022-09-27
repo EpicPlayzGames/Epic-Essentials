@@ -1,5 +1,6 @@
 package dev.epicplayzgames.epicessentials.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,6 +16,7 @@ public class homeCommand implements CommandExecutor {
 
             //Sends a player to their bed location
             player.teleport(player.getBedSpawnLocation());
+            player.sendMessage(ChatColor.GOLD + "Teleported to Home");
 
         }
 
