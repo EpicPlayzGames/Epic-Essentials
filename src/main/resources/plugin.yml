@@ -1,0 +1,22 @@
+name: Epic-Essentials
+version: '${project.version}'
+main: dev.epicplayzgames.epicessentials.EpicEssentials
+api-version: 1.19
+authors: [ EpicPlayzGames ]
+description: Basic Essentials plugin for a Private Server
+website: https://www.github.com/EpicPlayzGames
+commands:
+  heal:
+    description: Heals a player
+    usage: /<command>
+    permission: epic-essentials.heal
+  feed:
+    description: Feeds a player
+    usage: /<command>
+    permission: epic-essentials.feed
+  spawn:
+    description: Sends a player to world spawn
+    usage: /<command>
+  home:
+    description: Sends a player to a bed location
+    usage: /<command>
