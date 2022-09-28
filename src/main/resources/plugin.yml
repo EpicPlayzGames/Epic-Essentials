@@ -9,14 +9,41 @@ commands:
   heal:
     description: Heals a player
     usage: /<command>
-    permission: epic-essentials.heal
+    permissions: epic-essentials.heal
+                 epic-essentials.heal.other
   feed:
     description: Feeds a player
     usage: /<command>
-    permission: epic-essentials.feed
+    permissions: epic-essentials.feed
+                 epic-essentials.feed.other
   spawn:
     description: Sends a player to world spawn
     usage: /<command>
+    permissions: epic-essentials.spawn.other
   home:
     description: Sends a player to a bed location
     usage: /<command>
+    permissions: epic-essentials.home.other
+  time:
+    description: Set world time
+    usage: /<command>
+    permission: epic-essentials.set-time
+  gm:
+    description: Set a players gamemode
+    usage: /<command>
+    permissions: epic-essentials.gamemode
+                 epic-essentials.gamemode.other
+  god:
+    description: Set god mode
+    usage: /<command>
+    permission: epic-essentials.god
+  cc:
+    description: Clear chat
+    usage: /<command>
+    permissions: epic-essentials.clearchat.use
+                 epic-essentials.clearchat.bypass
+  mc:
+    description: Mute chat
+    usage: /<command>
+    permissions: epic-essentials.mutechat.use
+                 epic-essentials.mutechat.bypass

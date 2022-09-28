@@ -15,3 +15,11 @@ Changelog:
     Version 1.01.1:
         Changed main file implementation of command and event registry
         Added external files for command and event registry.
+    Version 1.01.2
+        Added player targeting to existing commands
+        Added commands for:
+            - Time
+            - Gamemode
+            - God mode
+            - Clear chat
+            - Mute Chat
