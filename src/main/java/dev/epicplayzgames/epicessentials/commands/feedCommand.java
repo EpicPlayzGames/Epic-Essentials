@@ -1,5 +1,6 @@
 package dev.epicplayzgames.epicessentials.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,9 +19,36 @@ public class feedCommand implements CommandExecutor {
             //Checks if player has appropriate permission to execute the command
             if(player.hasPermission("epic-essentials.feed")) {
 
-                player.setFoodLevel(20);
-                player.setSaturation(20);
-                player.sendMessage(ChatColor.GOLD + "You've Been Fed.");
+                //Checks if player provides a name or not
+                if(args.length == 0) {
+
+                    player.setFoodLevel(20);
+                    player.setSaturation(20);
+                    player.sendMessage(ChatColor.GOLD + "You've Been Fed.");
+
+                }
+
+                //Checks if a name is provided
+                if(args.length == 1) {
+                    String playerName = args[0];
+                    Player targetPlayer = Bukkit.getPlayerExact(playerName);
+
+                    //Checks to see if player is online or not
+                    if(targetPlayer != null) {
+
+                        targetPlayer.setFoodLevel(20);
+                        targetPlayer.setSaturation(20);
+                        targetPlayer.sendMessage(ChatColor.GOLD + "You've been fed by " + player.getDisplayName());
+
+                        player.sendMessage(ChatColor.GOLD + targetPlayer.getDisplayName() + " has been fed.");
+
+                    } else {
+
+                        player.sendMessage(ChatColor.RED + "Unknown Player.");
+
+                    }
+
+                }
 
             } else {
 

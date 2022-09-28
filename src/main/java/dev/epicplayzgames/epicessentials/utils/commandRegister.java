@@ -1,10 +1,7 @@
 package dev.epicplayzgames.epicessentials.utils;
 
 import dev.epicplayzgames.epicessentials.EpicEssentials;
-import dev.epicplayzgames.epicessentials.commands.feedCommand;
-import dev.epicplayzgames.epicessentials.commands.healCommand;
-import dev.epicplayzgames.epicessentials.commands.homeCommand;
-import dev.epicplayzgames.epicessentials.commands.spawnCommand;
+import dev.epicplayzgames.epicessentials.commands.*;
 
 public class commandRegister {
 
