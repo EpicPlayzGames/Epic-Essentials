@@ -1,4 +1,4 @@
-package dev.epicplayzgames.epicessentials.commands;
+package dev.epicplayzgames.epicessentials.lib.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -34,19 +34,23 @@ public class godCommand implements CommandExecutor {
                     String playerName = args[0];
                     Player targetPlayer = Bukkit.getPlayerExact(playerName);
 
-                    if(args[0].equals(targetPlayer.getDisplayName())) {
+                    if(targetPlayer != null) {
 
-                        if(targetPlayer.isInvulnerable()) {
+                        if(args[0].equals(targetPlayer.getDisplayName())) {
 
-                            targetPlayer.setInvulnerable(false);
-                            targetPlayer.sendMessage(ChatColor.GOLD + "God Mode Disabled");
-                            player.sendMessage(ChatColor.GOLD + "God Mode Disabled for " + targetPlayer.getDisplayName());
+                            if(targetPlayer.isInvulnerable()) {
 
-                        } else {
+                                targetPlayer.setInvulnerable(false);
+                                targetPlayer.sendMessage(ChatColor.GOLD + "God Mode Disabled");
+                                player.sendMessage(ChatColor.GOLD + "God Mode Disabled for " + targetPlayer.getDisplayName());
 
-                            targetPlayer.setInvulnerable(true);
-                            targetPlayer.sendMessage(ChatColor.GOLD + "God Mode Enabled");
-                            player.sendMessage(ChatColor.GOLD + "God Mode Enabled for " + targetPlayer.getDisplayName());
+                            } else {
+
+                                targetPlayer.setInvulnerable(true);
+                                targetPlayer.sendMessage(ChatColor.GOLD + "God Mode Enabled");
+                                player.sendMessage(ChatColor.GOLD + "God Mode Enabled for " + targetPlayer.getDisplayName());
+
+                            }
 
                         }
 

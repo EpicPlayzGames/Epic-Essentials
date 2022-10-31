@@ -1,4 +1,4 @@
-package dev.epicplayzgames.epicessentials.commands;
+package dev.epicplayzgames.epicessentials.lib.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,21 +7,22 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Objects;
+
 public class spawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         //Checks if command sender is a player
-        if (sender instanceof Player) {
+        if (sender instanceof Player player) {
             //Passes sender into player instance
-            Player player = (Player) sender;
 
             //Checks for player name
             if (args.length == 0 ) {
 
                 // Teleports player to world spawn
-                player.teleport(player.getWorld().getSpawnLocation());
-                player.sendMessage(ChatColor.GOLD + "Teleported to World Spawn");
+                player.teleport(Objects.requireNonNull(player.getServer().getWorld("world")).getSpawnLocation());
+                player.sendMessage(ChatColor.YELLOW + "Sent to Spawn");
 
             }
 
@@ -33,9 +34,17 @@ public class spawnCommand implements CommandExecutor {
                 //If name provided, checks if player has permission to use command
                 if(player.hasPermission("epic-essentials.spawn.other")) {
 
-                    targetPlayer.teleport(targetPlayer.getWorld().getSpawnLocation());
-                    targetPlayer.sendMessage(ChatColor.GOLD + "Teleported to spawn by " + player.getDisplayName());
-                    player.sendMessage(ChatColor.GOLD + targetPlayer.getDisplayName() + " teleported to spawn");
+                    if(targetPlayer != null){
+
+                        targetPlayer.teleport(Objects.requireNonNull(targetPlayer.getServer().getWorld("world")).getSpawnLocation());
+                        targetPlayer.sendMessage(ChatColor.GOLD + "Sent to Spawn by " + player.getDisplayName());
+                        player.sendMessage(ChatColor.GOLD + targetPlayer.getDisplayName() + " sent to Spawn");
+
+                    } else {
+
+                        player.sendMessage(ChatColor.RED + "Unknown player");
+
+                    }
 
                 } else {
 

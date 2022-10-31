@@ -23,3 +23,8 @@ Changelog:
             - God mode
             - Clear chat
             - Mute Chat
+    Version 1.01.3
+        Changed Commands
+            - Spawn Command
+                - Changed to target overworld only
+        Changed plugin structure

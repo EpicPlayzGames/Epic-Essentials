@@ -1,4 +1,4 @@
-package dev.epicplayzgames.epicessentials.listeners;
+package dev.epicplayzgames.epicessentials.lib.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

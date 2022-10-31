@@ -1,4 +1,4 @@
-package dev.epicplayzgames.epicessentials.commands;
+package dev.epicplayzgames.epicessentials.lib.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,10 +11,9 @@ public class homeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         //Checks if sender is a player
-        if(sender instanceof Player) {
+        if(sender instanceof Player player) {
 
             //Passes sender into player instance
-            Player player = (Player) sender;
 
             if (args.length == 0) {
 

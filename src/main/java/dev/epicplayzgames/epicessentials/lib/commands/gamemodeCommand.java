@@ -1,4 +1,4 @@
-package dev.epicplayzgames.epicessentials.commands;
+package dev.epicplayzgames.epicessentials.lib.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
